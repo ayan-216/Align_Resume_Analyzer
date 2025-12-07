@@ -19,12 +19,12 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 ## Key Features
 
-* **🔐 User Authentication:** Secure Login and Registration system with session management.
-* **📄 Resume Parsing:** Automatically extracts text and metadata from **PDF** and **DOCX** files.
-* **🎯 Smart Matching:** Compares resume keywords against Job Descriptions (JD) to calculate a compatibility score (0-100%).
-* **💡 AI Suggestions:** Identifies missing keywords and skills required for the job.
-* **📊 Analytics Dashboard:** Tracks application history, average scores, and top skills in a clean, monochrome interface.
-* **🎨 Modern UI:** Features a high-contrast "Split-Screen" landing page and a professional "Black & White" functional dashboard.
+* **User Authentication:** Secure Login and Registration system with session management.
+* **Resume Parsing:** Automatically extracts text and metadata from **PDF** and **DOCX** files.
+* **Smart Matching:** Compares resume keywords against Job Descriptions (JD) to calculate a compatibility score (0-100%).
+* **AI Suggestions:** Identifies missing keywords and skills required for the job.
+* **Analytics Dashboard:** Tracks application history, average scores, and top skills in a clean, monochrome interface.
+* **Modern UI:** Features a high-contrast "Split-Screen" landing page and a professional "Black & White" functional dashboard.
 
 ---
 
