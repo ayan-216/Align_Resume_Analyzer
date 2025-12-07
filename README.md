@@ -1,6 +1,6 @@
 # Align | Intelligent Resume Analyzer
 
-![Align Logo](static/logo.png)
+![Align Logo](static/readme_logo.png)
 
 **Align** is a modern, full-stack **Applicant Tracking System (ATS)** tool designed to bridge the gap between job seekers and recruitment algorithms.
 
