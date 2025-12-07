@@ -1,4 +1,4 @@
-# Align | Intelligent Resume Analyzer 🚀
+# Align | Intelligent Resume Analyzer
 
 ![Align Logo](static/logo.png)
 
@@ -8,7 +8,7 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Landing Page | Dashboard | Analysis Tool |
 |:---:|:---:|:---:|
@@ -17,7 +17,7 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 * **🔐 User Authentication:** Secure Login and Registration system with session management.
 * **📄 Resume Parsing:** Automatically extracts text and metadata from **PDF** and **DOCX** files.
@@ -28,7 +28,7 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend:** HTML5, CSS3, Bootstrap 5, Jinja2 Templating.
 * **Backend:** Python 3.x, Flask (Micro-framework).
@@ -38,7 +38,7 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 Follow these steps to run the project locally.
 
@@ -82,7 +82,7 @@ The project requires a database configuration file that is not included in the r
 ```bash
 python app.py
 ```
-## 📂 Project Structure
+## Project Structure
 ```text
 /Align_Resume_Analyzer
 │
