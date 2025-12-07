@@ -59,14 +59,17 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-### 4. Database Configuration
+### 4. Add uploads path
+In the main folder add another path(folde) named 'uploads' to save the uploaded resumes.
+
+### 5. Database Configuration
 * Open MySQL Workbench or your terminal.
 
 * Open the file database_schema.sql provided in this repository.
 
 * Run the script to create the ResumeDB database, tables, and populate the Skill_Master dictionary.
 
-### 5. Connect Python to MySQL
+### 6. Connect Python to MySQL
 The project requires a database configuration file that is not included in the repo for security.
 * Create a new file named db_config.py in the root folder
 * Paste the following code and update your password:
@@ -78,7 +81,7 @@ The project requires a database configuration file that is not included in the r
     'database': 'ResumeDB'
   }
   ```
-### 6. Run the Application
+### 7. Run the Application
 ```bash
 python app.py
 ```
