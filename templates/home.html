@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container text-center py-5">
+    <h1 class="display-3 fw-bold mb-4" style="background: linear-gradient(to right, #6366f1, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Beat the ATS. Get Hired.
+    </h1>
+    <p class="lead mb-5" style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">
+        Our AI-powered Intelligent Resume Analyzer scans your CV against job descriptions to find gaps, optimize keywords, and boost your interview chances.
+    </p>
+    
+    {% if session.user_id %}
+        <a href="/analyze" class="btn btn-primary btn-lg px-5 py-3">Go to Analyzer &rarr;</a>
+    {% else %}
+        <a href="/register" class="btn btn-primary btn-lg px-5 py-3 me-3">Get Started</a>
+        <a href="/login" class="btn btn-outline-primary btn-lg px-5 py-3">Login</a>
+    {% endif %}
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card p-4 h-100 border-0 shadow-sm">
+            <div class="display-4 text-primary mb-3">🚀</div>
+            <h3>Instant Scoring</h3>
+            <p class="text-muted">Get a real-time match score (0-100%) based on industry-standard algorithms.</p>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card p-4 h-100 border-0 shadow-sm">
+            <div class="display-4 text-success mb-3">🎯</div>
+            <h3>Keyword Matching</h3>
+            <p class="text-muted">We identify exactly which skills from the Job Description are missing in your resume.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card p-4 h-100 border-0 shadow-sm">
+            <div class="display-4 text-info mb-3">📊</div>
+            <h3>History Tracking</h3>
+            <p class="text-muted">Keep track of every resume version and job application in your personal dashboard.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

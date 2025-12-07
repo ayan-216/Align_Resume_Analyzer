@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container-fluid g-0">
+    <div class="row g-0 full-height">
+        
+        <div class="col-lg-6 split-left">
+            <div style="position: absolute; top: 30px; left: 30px; font-size: 2rem;">
+                &bull; &bull; &bull;
+            </div>
+            
+            <h1 class="brand-cursive" style="font-size: 12rem;">Align</h1>
+        </div>
+
+        <div class="col-lg-6 split-right">
+            
+            <div class="d-flex justify-content-between mb-5" style="position: absolute; top: 40px; right: 50px; left: 55%; width: 40%;">
+                <div>
+                    </div>
+                <div style="font-size: 1.5rem; cursor: pointer;">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h2 class="hero-title">
+                    Align Your<br>Resume
+                </h2>
+                
+                <p class="text-muted mb-4" style="max-width: 400px; line-height: 1.6;">
+                    Our AI-powered intelligent analyzer scans your CV against job descriptions to find gaps and boost your interview chances.
+                </p>
+
+                {% if session.user_id %}
+                    <a href="/analyze" class="btn btn-black">Go to Dashboard</a>
+                {% else %}
+                    <a href="/register" class="btn btn-black">Get Started</a>
+                {% endif %}
+
+                <div class="social-icons mt-5 pt-5">
+                    <a href="#" class="text-black"><i class="fab fa-facebook-f me-3"></i></a>
+                    <a href="#" class="text-black"><i class="fa-brands fa-x-twitter me-3"></i></a>
+                    <a href="#" class="text-black"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,161 @@
+/* =========================================
+   1. GLOBAL THEME (Applies to EVERY page)
+   ========================================= */
+
+/* Import Fonts: 'Great Vibes' for Logo, 'Montserrat' for Text */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Base Settings */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    background-color: #fff;
+    overflow-x: hidden; /* Prevents side-scrolling on split screen */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    /* text-transform: uppercase;  <-- DELETE THIS LINE */
+    letter-spacing: 0.5px; /* Reduce spacing slightly for normal text */
+}
+
+/* The Cursive Logo Class */
+.brand-cursive {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    
+    /* ADD THIS LINE to force "Align" instead of "ALIGN" */
+    text-transform: none !important; 
+    
+    letter-spacing: normal;
+    line-height: 1;
+}
+
+/* --- THE SIGNATURE BLACK BUTTON --- */
+/* Replaces standard buttons with a sharp black style */
+.btn-black {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 0; /* Sharp edges */
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-black:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+/* --- SHARP FORM INPUTS --- */
+.form-control {
+    border-radius: 0; /* No rounded corners */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 12px;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: #000; /* Black border when typing */
+    box-shadow: none;   /* Remove blue glow */
+    background-color: #fafafa;
+}
+
+/* =========================================
+   2. SPLIT THEME (Login / Register / Home)
+   ========================================= */
+
+/* The container that holds the split layout */
+.split-container {
+    min-height: 100vh; /* Full screen height */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Left Side (Black Background) */
+.split-left {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Keeps content inside */
+}
+
+/* Right Side (White Background + Form) */
+.split-right {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center form vertically */
+    padding: 10%; /* Responsive padding */
+}
+
+.split-left, .split-right {
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. DASHBOARD THEME (Analyze / Results)
+   ========================================= */
+
+/* Layout Container for internal pages */
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Minimalist Card (No shadow, just border) */
+.minimal-card {
+    border: 1px solid #eee;
+    padding: 50px;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+/* Progress Bars (Keep semantic colors for scores) */
+.progress {
+    border-radius: 0;
+    background-color: #f0f0f0;
+    height: 8px;
+}
+
+.progress-bar {
+    border-radius: 0;
+    /* Animation for filling up */
+    transition: width 1.5s ease-in-out;
+}
+
+/* Navbar Customization (For internal pages) */
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #000000;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-link {
+    color: #000 !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* --- FIX NAVBAR LOGO SIZE --- */
+.navbar-brand.brand-cursive {
+    font-size: 1.5rem;   /* 1.5rem is approx 24px (Standard Logo Size) */
+    letter-spacing: 2px; /* Spacing makes it look premium */
+    font-weight: 800;    /* Extra Bold */
+    color: #000;         /* Solid Black */
+}

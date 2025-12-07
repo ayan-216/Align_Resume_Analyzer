@@ -1,0 +1,12 @@
+# Ignore the database config with your password
+db_config.py
+
+# Ignore the uploads folder (too big/messy)
+uploads/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment (if you have one)
+venv/

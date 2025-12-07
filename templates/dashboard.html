@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h2 class="display-6 fw-bold">DASHBOARD</h2>
+            <p class="text-muted">Overview of your resume performance.</p>
+        </div>
+        <a href="/analyze" class="btn btn-black">
+            + NEW SCAN
+        </a>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="p-4" style="background-color: #000; color: #fff; border: 1px solid #000;">
+                <h5 class="text-uppercase small fw-bold opacity-75">Total Resumes</h5>
+                <h2 class="display-4 fw-bold mb-0">{{ results|length }}</h2>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+            <div class="p-4" style="background-color: #fff; color: #000; border: 2px solid #000;">
+                <h5 class="text-uppercase small fw-bold text-muted">Average Score</h5>
+                {% if results %}
+                    {% set avg = results | map(attribute='overall_score') | sum / results|length %}
+                    <h2 class="display-4 fw-bold mb-0">{{ "%.0f"|format(avg) }}%</h2>
+                {% else %}
+                    <h2 class="display-4 fw-bold mb-0">0%</h2>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="p-4" style="background-color: #f8f9fa; color: #000; border: 1px solid #eee;">
+                <h5 class="text-uppercase small fw-bold text-muted">Top Skill Found</h5>
+                <h2 class="display-6 fw-bold mb-0 text-truncate" title="{{ top_skill }}">
+                    {{ top_skill }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="minimal-card p-0" style="border: 1px solid #eee;">
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                
+                <thead style="background-color: #000; color: #fff;">
+                    <tr class="text-uppercase small fw-bold">
+                        <th class="py-3 ps-4" style="width: 20%">Candidate</th>
+                        <th class="py-3" style="width: 25%">Match Score</th>
+                        <th class="py-3" style="width: 30%">Skills Found</th> <th class="py-3">Suggestions</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for row in results %}
+                    <tr>
+                        <td class="ps-4 py-4">
+                            <div class="fw-bold text-uppercase">{{ row.name }}</div>
+                            <div class="small text-muted">{{ row.filename }}</div>
+                        </td>
+                        
+                        <td class="py-4">
+                            <div class="d-flex align-items-center">
+                                <span class="fw-bold me-3" style="min-width: 40px;">{{ row.overall_score|int }}%</span>
+                                <div class="progress flex-grow-1" style="height: 8px; background-color: #eee; border-radius: 0;">
+                                    <div class="progress-bar" 
+                                         role="progressbar" 
+                                         style="width: {{ row.overall_score }}%; background-color: #000;">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="py-4">
+                            <span class="small text-muted" style="line-height: 1.4; display: block;">
+                                {{ row.skills_found }}
+                            </span>
+                        </td>
+
+                        <td class="py-4 pe-4 text-muted small">
+                            {{ row.suggestions }}
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center py-5 text-muted">
+                            No analyses found.
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
