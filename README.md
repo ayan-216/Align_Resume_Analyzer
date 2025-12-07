@@ -82,7 +82,8 @@ The project requires a database configuration file that is not included in the r
 ```bash
 python app.py
 ```
-# 📂 Project Structure
+## 📂 Project Structure
+```text
 /Align_Resume_Analyzer
 │
 ├── app.py                 # Main Flask Application Controller
@@ -104,7 +105,7 @@ python app.py
 │   └── dashboard.html     # Results & History
 │
 └── uploads/               # Stores uploaded resumes locally
-
+```
 # Future Scope
 * **Machine Learning Integration: Implementing TF-IDF or Word2Vec for deeper semantic matching (understanding context, not just keywords).
 
