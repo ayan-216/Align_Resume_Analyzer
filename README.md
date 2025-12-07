@@ -60,8 +60,63 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 4. Database Configuration
-Open MySQL Workbench or your terminal.
+* **Open MySQL Workbench or your terminal.
 
-Open the file database_schema.sql provided in this repository.
+* **Open the file database_schema.sql provided in this repository.
 
-Run the script to create the ResumeDB database, tables, and populate the Skill_Master dictionary.
+* **Run the script to create the ResumeDB database, tables, and populate the Skill_Master dictionary.
+
+### 5. Connect Python to MySQL
+The project requires a database configuration file that is not included in the repo for security.
+* **Create a new file named db_config.py in the root folder
+* **Paste the following code and update your password:
+  ```bash
+  db_config = {
+    'host': 'localhost',
+    'user': 'resume_admin',      # or 'root'
+    'password': 'YOUR_PASSWORD', # Your MySQL Password
+    'database': 'ResumeDB'
+  }
+  ```
+### 6. Run the Application
+```bash
+python app.py
+```
+# 📂 Project Structure
+/Align_Resume_Analyzer
+│
+├── app.py                 # Main Flask Application Controller
+├── resume_parser.py       # NLP Logic for Text Extraction & Matching
+├── db_config.py           # Database Connection Settings (Ignored by Git)
+├── database_schema.sql    # SQL Script to setup the database
+├── requirements.txt       # List of Python dependencies
+│
+├── static/                # CSS, Images, Logo
+│   ├── style.css          # Master Stylesheet (Global/Split/Dashboard themes)
+│   └── logo.png
+│
+├── templates/             # HTML Files
+│   ├── layout.html        # Base template (Navbar/Footer)
+│   ├── index.html         # Landing Page (Split Screen)
+│   ├── login.html         # Login Page
+│   ├── register.html      # Register Page
+│   ├── analyze.html       # Upload Tool
+│   └── dashboard.html     # Results & History
+│
+└── uploads/               # Stores uploaded resumes locally
+
+# Future Scope
+* **Machine Learning Integration: Implementing TF-IDF or Word2Vec for deeper semantic matching (understanding context, not just keywords).
+
+* **Social Login: Adding Google/LinkedIn authentication.
+
+* **PDF Report Export: Allowing users to download a PDF report of their analysis.
+
+* **Job Scraper: Automatically fetching job descriptions from LinkedIn/Indeed.
+
+# Contributing
+Contributions are welcome! Please fork the repository and create a pull request.
+
+# License
+This project is open-source and available under the MIT License.
+
