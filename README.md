@@ -60,7 +60,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 4. Add uploads path
-In the main folder add another path(folde) named 'uploads' to save the uploaded resumes.
+In the main folder add another path(folder) named 'uploads' to save the uploaded resumes.
 
 ### 5. Database Configuration
 * Open MySQL Workbench or your terminal.
