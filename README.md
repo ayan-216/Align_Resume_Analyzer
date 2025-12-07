@@ -12,8 +12,8 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 | Landing Page | Dashboard | Analysis Tool |
 |:---:|:---:|:---:|
-| ![Landing](static/screenshots/landing.png) | ![Dashboard](static/screenshots/dashboard.png) | ![Analysis](static/screenshots/analyze.png) |
-*(Note: Create a folder named `screenshots` inside `static` and add your images there to see them here)*
+| ![Landing](static/screenshots/landing.png) | ![Dashboard](static/screenshots/dashboard.png) | ![Analysis](static/screenshots/analyzer.png) |
+
 
 ---
 
