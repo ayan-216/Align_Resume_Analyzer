@@ -60,16 +60,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 4. Database Configuration
-* **Open MySQL Workbench or your terminal.
+* Open MySQL Workbench or your terminal.
 
-* **Open the file database_schema.sql provided in this repository.
+* Open the file database_schema.sql provided in this repository.
 
-* **Run the script to create the ResumeDB database, tables, and populate the Skill_Master dictionary.
+* Run the script to create the ResumeDB database, tables, and populate the Skill_Master dictionary.
 
 ### 5. Connect Python to MySQL
 The project requires a database configuration file that is not included in the repo for security.
-* **Create a new file named db_config.py in the root folder
-* **Paste the following code and update your password:
+* Create a new file named db_config.py in the root folder
+* Paste the following code and update your password:
   ```bash
   db_config = {
     'host': 'localhost',
@@ -106,18 +106,18 @@ python app.py
 │
 └── uploads/               # Stores uploaded resumes locally
 ```
-# Future Scope
-* **Machine Learning Integration: Implementing TF-IDF or Word2Vec for deeper semantic matching (understanding context, not just keywords).
+## Future Scope
+* **Machine Learning Integration:** Implementing TF-IDF or Word2Vec for deeper semantic matching (understanding context, not just keywords).
 
-* **Social Login: Adding Google/LinkedIn authentication.
+* **Social Login:** Adding Google/LinkedIn authentication.
 
-* **PDF Report Export: Allowing users to download a PDF report of their analysis.
+* **PDF Report Export:** Allowing users to download a PDF report of their analysis.
 
-* **Job Scraper: Automatically fetching job descriptions from LinkedIn/Indeed.
+* **Job Scraper:** Automatically fetching job descriptions from LinkedIn/Indeed.
 
-# Contributing
+## Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
 
-# License
+## License
 This project is open-source and available under the MIT License.
 
