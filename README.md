@@ -12,7 +12,7 @@ Built with **Python (Flask)** and **MySQL**, it uses Natural Language Processing
 
 | Landing Page | Dashboard | Analysis Tool |
 |:---:|:---:|:---:|
-| ![Landing](static/screenshots/landing.png) | ![Dashboard](static/screenshots/dashboard.png) | ![Analysis](static/screenshots/analyzer.png) |
+| ![Landing](static/screenshots/landing.png) | ![Dashboard](static/screenshots/dashboard.png) | ![Analysis](static/screenshots/analyze.png) |
 
 
 ---
