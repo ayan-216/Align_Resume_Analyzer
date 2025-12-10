@@ -23,7 +23,7 @@
                 <a class="navbar-brand brand-cursive text-dark" href="/">Align</a>
                 <div class="navbar-nav ms-auto">
                     {% if session.user_id %}
-                        <span class="nav-link text-dark fw-bold">Hello, {{ session.user_name }}!</span>
+                        <span class="nav-link text-dark fw-bold">Hello, {{ session.name }}!</span>
                         <a class="nav-link" href="/analyze">Analyzer</a>
                         <a class="nav-link" href="/dashboard">Dashboard</a>
                         <a class="nav-link text-danger" href="/logout">Logout</a>

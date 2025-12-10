@@ -45,52 +45,91 @@
 
     <div class="minimal-card p-0" style="border: 1px solid #eee;">
         <div class="table-responsive">
-            <table class="table align-middle mb-0">
-                
-                <thead style="background-color: #000; color: #fff;">
-                    <tr class="text-uppercase small fw-bold">
-                        <th class="py-3 ps-4" style="width: 20%">Candidate</th>
-                        <th class="py-3" style="width: 25%">Match Score</th>
-                        <th class="py-3" style="width: 30%">Skills Found</th> <th class="py-3">Suggestions</th>
+            <table class="table align-middle table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 25%;">Candidate / Job</th>
+                        <th style="width: 15%;">Match Score</th>
+                        <th style="width: 35%;">Suggestions (Missing Skills)</th>
+                        <th style="width: 25%;">Actions</th>
                     </tr>
                 </thead>
-                
                 <tbody>
                     {% for row in results %}
                     <tr>
-                        <td class="ps-4 py-4">
-                            <div class="fw-bold text-uppercase">{{ row.name }}</div>
-                            <div class="small text-muted">{{ row.filename }}</div>
-                        </td>
-                        
-                        <td class="py-4">
-                            <div class="d-flex align-items-center">
-                                <span class="fw-bold me-3" style="min-width: 40px;">{{ row.overall_score|int }}%</span>
-                                <div class="progress flex-grow-1" style="height: 8px; background-color: #eee; border-radius: 0;">
-                                    <div class="progress-bar" 
-                                         role="progressbar" 
-                                         style="width: {{ row.overall_score }}%; background-color: #000;">
-                                    </div>
-                                </div>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <span class="fw-bold text-dark">{{ row.candidate_name }}</span>
+                                
+                                <span class="text-muted" style="font-size: 0.75rem;">
+                                    <i class="fas fa-file-alt"></i> {{ row.resume_filename }}
+                                </span>
+                                
+                                <span class="text-dark small mt-1">
+                                    <i class="fas fa-briefcase"></i> {{ row.job_title }}
+                                </span>
+                                
+                                <span class="text-muted small" style="font-size: 0.70rem;">{{ row.date }}</span>
                             </div>
                         </td>
-
-                        <td class="py-4">
-                            <span class="small text-muted" style="line-height: 1.4; display: block;">
-                                {{ row.skills_found }}
-                            </span>
+                        
+                        <td>
+                            {% if row.overall_score >= 70 %}
+                                <span class="badge bg-success fs-6">{{ row.overall_score|round|int }}%</span>
+                            {% elif row.overall_score >= 40 %}
+                                <span class="badge bg-warning text-dark fs-6">{{ row.overall_score|round|int }}%</span>
+                            {% else %}
+                                <span class="badge bg-danger fs-6">{{ row.overall_score|round|int }}%</span>
+                            {% endif %}
                         </td>
 
-                        <td class="py-4 pe-4 text-muted small">
-                            {{ row.suggestions }}
+                        <td>
+                            <small class="text-danger">
+                                {% if row.suggestions %}
+                                    {{ row.suggestions }}
+                                {% else %}
+                                    <span class="text-muted">No suggestions available</span>
+                                {% endif %}
+                            </small>
+                        </td>
+
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="{{ url_for('view_resume', filename=row.resume_filename) }}" target="_blank" class="btn btn-sm btn-outline-dark">
+                                    <i class="fas fa-file-pdf"></i> CV
+                                </a>
+
+                                {% if row.jd_filename %}
+                                    <a href="{{ url_for('view_jd', filename=row.jd_filename) }}" target="_blank" class="btn btn-sm btn-outline-dark">
+                                        <i class="fas fa-file-alt"></i> JD
+                                    </a>
+                                {% else %}
+                                    <button class="btn btn-sm btn-outline-secondary" disabled title="No JD file available for this entry">
+                                        <i class="fas fa-ban"></i> No JD
+                                    </button>
+                                {% endif %}
+                            </div>
                         </td>
                     </tr>
-                    {% else %}
-                    <tr>
-                        <td colspan="4" class="text-center py-5 text-muted">
-                            No analyses found.
-                        </td>
-                    </tr>
+
+                    <div class="modal fade" id="jdModal{{ row.result_id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                        <div class="modal-header bg-black text-white">
+                            <h5 class="modal-title">Job Description: {{ row.job_title }}</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="p-3 bg-light border rounded" style="white-space: pre-wrap; max-height: 400px; overflow-y: auto;">
+                                {{ row.job_description }}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                     {% endfor %}
                 </tbody>
             </table>

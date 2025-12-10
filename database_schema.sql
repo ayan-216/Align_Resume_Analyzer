@@ -30,7 +30,6 @@ CREATE TABLE IF NOT EXISTS Resumes (
     user_id INT,
     filename VARCHAR(255),
     upload_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    raw_text LONGTEXT,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 

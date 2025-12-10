@@ -14,14 +14,27 @@
                 <form id="upload-form" action="/analyze" method="post" enctype="multipart/form-data">
 
                     <div class="mb-5">
-                        <label class="fw-bold small mb-2">1. SELECT RESUME</label>
+                        <label class="fw-bold mb-2">Upload Resume (PDF/DOCX)</label>
                         <input class="form-control" type="file" name="resume" required>
                     </div>
 
                     <div class="mb-5">
-                        <label class="fw-bold small mb-2">2. PASTE JOB DESCRIPTION</label>
-                        <textarea class="form-control" name="job_description" rows="6" 
-                                  placeholder="Paste the full JD text here..." required></textarea>
+                        <label class="form-label fw-bold">Upload Job Description (PDF/DOCX)</label>
+                        <input type="file" name="jd_file" class="form-control" accept=".pdf, .docx" required>
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="form-label fw-bold">Job Title / Role Name</label>
+                        <input type="text" name="job_title" class="form-control" placeholder="e.g. Python Developer" required>
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                        <label class="form-check-label small text-muted" for="termsCheck">
+                            I hereby declare that the documents uploaded (Resume and Job Description) are authentic and belong to me or are used with appropriate permission. I understand that falsifying information may lead to disqualification.
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before analyzing.
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-black w-100 py-3">
