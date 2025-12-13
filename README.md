@@ -60,7 +60,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### 4. Add uploads path
-In the main folder add another path(folder) named 'uploads' to save the uploaded resumes.
+In the main folder add another path(folder) named 'uploads' to save the uploaded resumes. After creating the main uploads folder, you must create two subfolders inside it named resumes and jds to store the respective documents.
+```text
+uploads/
+    ├── resumes            # Stores uploaded resumes locally
+    └── jds                # Stores uploaded jds locally
+```
 
 ### 5. Database Configuration
 * Open MySQL Workbench or your terminal.
@@ -107,7 +112,9 @@ python app.py
 │   ├── analyze.html       # Upload Tool
 │   └── dashboard.html     # Results & History
 │
-└── uploads/               # Stores uploaded resumes locally
+└── uploads/
+    ├── resumes            # Stores uploaded resumes locally
+    └── jds                # Stores uploaded jds locally
 ```
 ## Future Scope
 * **Machine Learning Integration:** Implementing TF-IDF or Word2Vec for deeper semantic matching (understanding context, not just keywords).
